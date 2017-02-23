@@ -14,7 +14,7 @@
     "order meds via voice command"
   ],
   "author": "PetePlays",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
