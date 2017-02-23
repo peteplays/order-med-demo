@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voice Demo UI</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet/less" type="text/css" href="main.less">
+  </head>
+  <body>
+
+    <div id="server-error" class="alert alert-danger text-center" role="alert">
+      <p>Unable to reach the DB</p>
+      <p id="server-error-output"></p>
+    </div>
+
+    <div class="container main-container">
+
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <h2 class="text-center">Medications Ordered</h2>
+        </div>
+        <div class="col-md-offset-1 col-md-3 btn-holder">
+          <button class="btn btn-success btn-block pull-right polling-status-btn mt-14">
+            <span id="polling-status"></span> Polling
+          </button>
+          <div class="loading pull-right">
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Medication Name</th>
+              <th>Quantity</th>
+              <th>Date Requested</th>
+              <th>Date Ordered</th>
+            </tr>
+          </thead>
+          <tbody id="medList">
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- main-container -->
+
+    <footer class="footer">
+      <a href="http://www.peteplays.com" target="_blank">
+        <img src="./images/peteplays.png" alt="PetePlays Logo">
+      </a>
+    </footer>
+
+    <script src="less/dist/less.min.js" type="text/javascript"></script>
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "order-med-demo",
+  "version": "0.1.0",
+  "description": "Receive med orders from api.ai",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "api.ai",
+    "med order demo",
+    "order meds via voice command"
+  ],
+  "author": "PetePlays",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.1",
+    "jquery": "^3.1.1",
+    "less": "^2.7.2",
+    "moment": "^2.17.1",
+    "mongodb": "^2.2.24",
+    "serve-favicon": "^2.4.0"
+  }
+}
