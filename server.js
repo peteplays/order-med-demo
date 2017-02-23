@@ -17,8 +17,7 @@ app .use(express.static('www'))
         res.sendFile('index');
     });
 
-var db = require('./db.js');
-db(app);
+var db = require('./db.js')(app);
 
 // app.listen(port, ip);
 app.listen(port);

@@ -11,7 +11,7 @@ $(function() {
 
   function checkDBStatus() {
     $.getJSON("/checkDBStatus", function(data) {
-      if(data.db == 'ok') {
+      if( data.db == 'ok' ) {
         getData();
       } else {
         $('#server-error').slideDown('ease');
@@ -24,28 +24,25 @@ $(function() {
     if( status == 'Start' ) {
       console.log('stopping polling');
       $('.loading').slideUp('ease');
-      $('#polling-status').parent().removeClass('btn-danger');
-      $('#polling-status').parent().addClass('btn-success');
+      $('#polling-status').parent().removeClass('btn-danger').addClass('btn-success');
       $('.main-container').removeClass('is-polling');
       clearInterval(poller);
     } else {
       console.log('starting polling');
       $('.loading').slideDown('ease');
-      $('#polling-status').parent().removeClass('btn-success');
-      $('#polling-status').parent().addClass('btn-danger');
+      $('#polling-status').parent().removeClass('btn-success').addClass('btn-danger');
       $('.main-container').addClass('is-polling');
       startPolling();
     }
   }
 
   function getData() {
-    $.getJSON( "/getData", function( data ) {
-      if(data.join('') != previous_poll_data.join('')) {
+    $.getJSON('/getData', function( data ) {
+      if( data.join('') != previous_poll_data.join('') ) {
         $('#medList').children("tr").remove();
         buildMedList(data);
         previous_poll_data = data;
       }
-
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
       console.log('getJSON request failed! ' + textStatus);

@@ -6,7 +6,7 @@ var MongoClient = require('mongodb').MongoClient,
 
 module.exports = function(app) {
 
-  app.get("/checkDBStatus", function(req, res) {
+  app.get('/checkDBStatus', function(req, res) {
     MongoClient.connect(mongoUrl+db, function(err, db) {
       if(err) {
         console.log(err);
@@ -16,7 +16,7 @@ module.exports = function(app) {
       res.json({'db': 'ok'});
     });
   })
-  .get("/getData", function(req, res) {
+  .get('/getData', function(req, res) {
     MongoClient.connect(mongoUrl+db, function(err, db) {
       if(err) { console.log(err); return; }
       db.collection(collection).find().toArray(function(err, result) {
@@ -26,7 +26,7 @@ module.exports = function(app) {
       });
     });
   })
-  .post("/addData", function(req, res) {
+  .post('/addData', function(req, res) {
     var data      = req.body,
         json_data = {
           'drug':     data.result.parameters.drugName[0],
