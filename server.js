@@ -20,4 +20,5 @@ app .use(express.static('www'))
 var db = require('./db.js');
 db(app);
 
-app.listen(port, ip);
+// app.listen(port, ip);
+app.listen(port);
