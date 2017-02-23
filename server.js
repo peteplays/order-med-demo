@@ -2,7 +2,7 @@ var express     = require('express'),
     bodyParser  = require("body-parser"),
     favicon     = require('serve-favicon'),
     app         = express(),
-    port        = process.env.OPENSHIFT_NODEJS_PORT || 5555,
+    port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 5555,
     ip          = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 console.log('Server running at...\nhttp://localhost:'+port);
