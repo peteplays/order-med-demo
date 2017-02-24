@@ -15,12 +15,12 @@ body {
   font-family: 'Lato', sans-serif;
   margin-bottom: @footer-height;
 
-  background-color: #f4c20d;
+  background-color: @g-yellow;
   background-image: @bg-1;
 }
 .btn:focus,
 .btn:active:focus,
-.btn.active:focus{
+.btn.active:focus {
   outline: none;
 }
 .btn{
@@ -56,13 +56,13 @@ body {
   background-color: fade(@g-blue, 70%);
   transition: .7s;
   box-shadow: 2px 2px 2px darken(@g-yellow, 15%), -1px -1px 2px darken(@g-yellow, 20%);
-  .table-responsive{
+  .table-responsive {
     background-color: #eee;
     border-radius: 4px;
     margin-bottom: 8px;
     box-shadow: 2px 2px 2px darken(@g-blue, 35%), -1px -1px 2px darken(@g-blue, 25%);
   }
-  .mt-14{
+  .mt-14 {
     margin-top: 14px;
   }
 }
@@ -93,8 +93,8 @@ body {
 		transition: all .2s ease-in-out;
      	transform: rotate(34deg);
      	&:hover{
-			transform: rotate(360deg);
-			opacity: 1;
+			  transform: rotate(360deg);
+			  opacity: 1;
 		}
 	}
 }

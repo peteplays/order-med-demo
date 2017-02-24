@@ -19,11 +19,14 @@ module.exports = function(app) {
   .get('/getData', function(req, res) {
     MongoClient.connect(mongoUrl+db, function(err, db) {
       if(err) { console.log(err); return; }
-      db.collection(collection).find().toArray(function(err, result) {
-        if(err) { console.log(err); return; }
-        res.json(result);
-        db.close();
-      });
+      db.collection(collection)
+        .find()
+        .sort({'dts': -1})
+        .toArray(function(err, result) {
+          if(err) { console.log(err); return; }
+          res.json(result);
+          db.close();
+        });
     });
   })
   .post('/addData', function(req, res) {
@@ -35,15 +38,16 @@ module.exports = function(app) {
         },
         insertData = {
           'data': json_data,
-          'dts':  moment().format('YYYY MMM D')
+          'dts':  moment().format('YYYY MMM D HH:mm:ss')
         };
     MongoClient.connect(mongoUrl+db, function(err, db) {
       if(err) { console.log(err); return; }
-      db.collection(collection).insert(insertData, function(err, result) {
-        if(err) { console.log(err); return; }
-        res.send(result);
-        db.close();
-      });
+      db.collection(collection)
+        .insert(insertData, function(err, result) {
+          if(err) { console.log(err); return; }
+          res.send(result);
+          db.close();
+        });
     });
   });
 

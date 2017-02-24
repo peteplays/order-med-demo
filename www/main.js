@@ -56,7 +56,7 @@ $(function() {
                     '<td>' + val.data.drug + '</td>' +
                     '<td>' + val.data.quantity + '</td>' +
                     '<td>' + val.data.when + '</td>' +
-                    '<td>' + val.dts + '</td>' +
+                    '<td>' + val.dts.slice(0, -8) + '</td>' +
                   '</tr>';
     });
     $('#medList').append(medList);
